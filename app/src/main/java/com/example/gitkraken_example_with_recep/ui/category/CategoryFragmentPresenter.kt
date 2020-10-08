@@ -4,6 +4,7 @@ import android.content.Context
 import com.example.gitkraken_example_with_recep.data.ServiceCallback
 import com.example.gitkraken_example_with_recep.data.apiServices.ApiServices
 import com.example.gitkraken_example_with_recep.data.models.CategoriesModel
+import com.example.gitkraken_example_with_recep.key
 import com.example.gitkraken_example_with_recep.ui.base.BasePresenter
 import javax.inject.Inject
 
@@ -34,7 +35,7 @@ constructor(apiServices: ApiServices) : BasePresenter<V>(apiServices),
     }
 
     override fun setCommandListFragment(position: Int, requireContext: Context) {
-        TODO("Not yet implemented")
+        mvpView.openCommandListFragment(key,categoryList.get(position).id)
     }
 
 }
