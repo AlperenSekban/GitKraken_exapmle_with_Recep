@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gitkraken_example_with_recep.MvpApp
 import com.example.gitkraken_example_with_recep.R
+import com.example.gitkraken_example_with_recep.ui.adapters.CategoryAdapter
 import com.example.gitkraken_example_with_recep.ui.base.BaseFragment
 import javax.inject.Inject
 
 
 class CategoryFragment : BaseFragment(),CategoryfragmentMvpView {
+
+    lateinit var adapter:CategoryAdapter
 
     @Inject
     lateinit var presenter:CategoryFragmentMvpPresenter<CategoryfragmentMvpView>
