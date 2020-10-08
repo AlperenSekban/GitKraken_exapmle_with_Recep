@@ -16,7 +16,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class DataModule(app: Application) {
+class DataModules(app: Application) {
     private val context: Context
 
     init {
