@@ -25,7 +25,7 @@ class CategoryFragment : BaseFragment(),CategoryfragmentMvpView {
 
         (requireActivity().application as MvpApp).viewComponents?.injectCategoryFragment(this)
 
-        presenter.onAttach(this)
+        presenter.onAttact(this)
         presenter.initPresenter()
 
         return view
