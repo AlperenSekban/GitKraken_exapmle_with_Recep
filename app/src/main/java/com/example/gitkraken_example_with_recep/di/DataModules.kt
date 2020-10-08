@@ -13,6 +13,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
+<<<<<<< HEAD
 class DataModule(app:Application) {
     private val context: Context
 
@@ -36,6 +37,10 @@ class DataModule(app:Application) {
     fun provideCommadServices(retrofitClient: RetrofitClient):CommandServices{
         return CommandServicesImp(retrofitClient)
     }
+=======
+class DataModule(app: Application) {
+
+>>>>>>> master
 
     @Singleton
     @Provides
