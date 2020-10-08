@@ -13,13 +13,13 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-<<<<<<< HEAD
 class DataModule(app:Application) {
     private val context: Context
 
     init {
         this.context = app
     }
+
     @Singleton
     @Provides
     fun provideContext(): Context {
@@ -28,23 +28,16 @@ class DataModule(app:Application) {
 
     @Singleton
     @Provides
-    fun provideApiServices(categoryServices: CategoryServices,commandServices: CommandServices):ApiServices{
-        return ApiServicesImp(categoryServices,commandServices)
+    fun provideApiServices(
+        categoryServices: CategoryServices,
+        commandServices: CommandServices
+    ): ApiServices {
+        return ApiServicesImp(categoryServices, commandServices)
     }
 
     @Singleton
     @Provides
-    fun provideCommadServices(retrofitClient: RetrofitClient):CommandServices{
+    fun provideCommadServices(retrofitClient: RetrofitClient): CommandServices {
         return CommandServicesImp(retrofitClient)
-    }
-=======
-class DataModule(app: Application) {
-
->>>>>>> master
-
-    @Singleton
-    @Provides
-    fun provideRetrofitClient():RetrofitClient{
-        return RetrofitClient()
     }
 }
