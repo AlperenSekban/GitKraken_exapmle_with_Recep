@@ -15,30 +15,7 @@ import javax.inject.Singleton
 
 @Module
 class DataModule(app: Application) {
-    private val context: Context
 
-    init {
-        this.context = app
-    }
-
-    @Singleton
-    @Provides
-    fun provideContext(): Context {
-        return context
-    }
-
-    @Singleton
-    @Provides
-    fun provideBasePresenter(apiServices: ApiServices): BasePresenter<MvpView> {
-        return BasePresenter(apiServices)
-    }
-
-    @Singleton
-    @Provides
-    fun provideCategoryServices(retrofitClient: RetrofitClient): CategoryServices {
-        return CategoryServicesImp(retrofitClient)
-        
-    }
 
 
 }
