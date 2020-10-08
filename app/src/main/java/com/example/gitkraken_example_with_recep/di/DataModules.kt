@@ -29,22 +29,5 @@ class DataModule(app: Application) {
         return context
     }
 
-    @Singleton
-    @Provides
-    fun provideApiServices(categoryServices: CategoryServices,commandServices: CommandServices):ApiServices{
-        return ApiServicesImp(categoryServices,commandServices)
-    }
-
-    @Singleton
-    @Provides
-    fun provideCommadServices(retrofitClient: RetrofitClient): CommandServices {
-        return CommandServicesImp(retrofitClient)
-    }
-
-    @Singleton
-    @Provides
-    fun provideRetrofitClient():RetrofitClient{
-        return RetrofitClient()
-    }
 
 }
