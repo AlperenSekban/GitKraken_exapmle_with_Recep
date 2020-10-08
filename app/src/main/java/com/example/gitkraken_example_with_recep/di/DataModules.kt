@@ -23,6 +23,7 @@ class DataModule(app: Application) {
         this.context = app
     }
 
+
     @Singleton
     @Provides
     fun provideContext(): Context {
@@ -31,8 +32,11 @@ class DataModule(app: Application) {
 
     @Singleton
     @Provides
-    fun provideApiServices(categoryServices: CategoryServices,commandServices: CommandServices):ApiServices{
-        return ApiServicesImp(categoryServices,commandServices)
+    fun provideApiServices(
+        categoryServices: CategoryServices,
+        commandServices: CommandServices
+    ): ApiServices {
+        return ApiServicesImp(categoryServices, commandServices)
     }
 
     @Singleton
@@ -43,8 +47,19 @@ class DataModule(app: Application) {
 
     @Singleton
     @Provides
-    fun provideRetrofitClient():RetrofitClient{
+    fun provideRetrofitClient(): RetrofitClient {
         return RetrofitClient()
     }
 
+    @Singleton
+    @Provides
+    fun provideBasePresenter(apiServices: ApiServices): BasePresenter<MvpView> {
+        return BasePresenter(apiServices)
+    }
+
+    @Singleton
+    @Provides
+    fun provideCategoryServices(retrofitClient: RetrofitClient): CategoryServices {
+        return CategoryServicesImp(retrofitClient)
+    }
 }
