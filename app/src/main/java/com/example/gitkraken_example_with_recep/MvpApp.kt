@@ -4,7 +4,6 @@ import android.app.Application
 import com.example.gitkraken_example_with_recep.di.DataModules
 import com.example.gitkraken_example_with_recep.di.ViewComponents
 
-
 //Alperen Sekban
 class MvpApp : Application() {
 
