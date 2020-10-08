@@ -1,4 +1,4 @@
-package com.example.terminalcommand_dagger2.models
+package com.example.gitkraken_example_with_recep.data.models
 
 import com.google.gson.annotations.SerializedName
 
