@@ -1,5 +1,6 @@
 package com.example.gitkraken_example_with_recep.data.apiServices
 
+<<<<<<< Updated upstream
 import com.example.gitkraken_example_with_recep.connectTimeout
 import com.example.gitkraken_example_with_recep.readTimeout
 import okhttp3.OkHttpClient
@@ -24,4 +25,7 @@ class RetrofitClient @Inject constructor() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+=======
+class RetrofitClient {
+>>>>>>> Stashed changes
 }
