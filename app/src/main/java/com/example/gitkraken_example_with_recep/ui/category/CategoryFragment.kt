@@ -1,5 +1,4 @@
 package com.example.gitkraken_example_with_recep.ui.category
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -37,13 +36,16 @@ class CategoryFragment : BaseFragment(), CategoryfragmentMvpView, SendId {
 
         return view
     }
+
     override fun loadDataCategoryList(categorylist: List<CategoriesModel>) {
+
+
     }
 
 
     override fun openCommandListFragment(key: String, id: String) {
-        var commanListFragment=CommandListFragment()
-        sendStringData(key,id,commanListFragment)
+        var commanListFragment = CommandListFragment()
+        sendStringData(key, id, commanListFragment)
         createFragment(R.id.activity_mainActivity_frameLayout, commanListFragment, requireContext())
     }
 
