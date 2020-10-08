@@ -14,7 +14,7 @@ class ApiServicesImp : ApiServices {
     @Inject
     constructor(categoryServices: CategoryServices, commandServices: CommandServices) {
         this.categoryServices = categoryServices
-        this.commandServices =commandServices
+        this.commandServices = commandServices
     }
 
     override fun getCategories(serviceCallback: ServiceCallback<List<CategoriesModel>>) {
@@ -25,7 +25,7 @@ class ApiServicesImp : ApiServices {
         categoryid: String,
         serviceCallback: ServiceCallback<List<CommandModel>>
     ) {
-        commandServices.getCommandsOfCategories(categoryid,serviceCallback)
+        commandServices.getCommandsOfCategories(categoryid, serviceCallback)
     }
 
 }
