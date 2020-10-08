@@ -11,7 +11,7 @@ import com.example.gitkraken_example_with_recep.R
 import com.example.gitkraken_example_with_recep.hideLoadinginUtilty
 import com.example.gitkraken_example_with_recep.showLoadingDialog
 
-class BaseFragment : Fragment(),MvpView {
+abstract class BaseFragment : Fragment(),MvpView {
 lateinit var progressDialog: ProgressDialog
 
     override fun onCreateView(
