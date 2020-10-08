@@ -1,4 +1,6 @@
 package com.example.gitkraken_example_with_recep.data.apiServices
 
-interface ApiServices {
+import com.example.gitkraken_example_with_recep.data.CategoryServices
+
+interface ApiServices:CategoryServices {
 }

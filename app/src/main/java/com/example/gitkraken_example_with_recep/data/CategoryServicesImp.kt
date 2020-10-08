@@ -7,20 +7,20 @@ import retrofit2.Call
 import retrofit2.Response
 import javax.inject.Inject
 
-class CategoryServicesImp:CategoryServices{
-    var apiServices:RestApi
+class CategoryServicesImp : CategoryServices {
+    var apiServices: RestApi
+
     @Inject
-    constructor(retrofitClient: RetrofitClient){
-        apiServices=retrofitClient.getClient().create(RestApi::class.java)
+    constructor(retrofitClient: RetrofitClient) {
+        apiServices = retrofitClient.getClient().create(RestApi::class.java)
 
     }
 
 
-
     override fun getCategories(serviceCallback: ServiceCallback<List<CategoriesModel>>) {
-      var call=apiServices.bring()
-        
-        call.enqueue(object :retrofit2.Callback<List<CategoriesModel>>{
+        var call = apiServices.bring()
+
+        call.enqueue(object : retrofit2.Callback<List<CategoriesModel>> {
             override fun onFailure(call: Call<List<CategoriesModel>>, t: Throwable) {
                 serviceCallback.onError(500, t.message.toString())
             }
