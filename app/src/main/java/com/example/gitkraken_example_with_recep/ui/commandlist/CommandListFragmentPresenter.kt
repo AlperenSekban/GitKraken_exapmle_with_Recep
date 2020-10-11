@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class CommandListFragmentPresenter<V:CommandListMvpView>
 @Inject
-constructor(apiServices: ApiServices):BasePresenter<V>(apiServices), CommandListMvpPresenter{
+constructor(apiServices: ApiServices):BasePresenter<V>(apiServices), CommandListMvpPresenter<V>{
     override fun initPresenter() {
         
     }
