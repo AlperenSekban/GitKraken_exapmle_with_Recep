@@ -12,17 +12,23 @@ import com.example.gitkraken_example_with_recep.data.models.CommandModel
 class CommandAdapter(var context: Context, var list: List<CommandModel>) :
     RecyclerView.Adapter<CommandAdapter.Define>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommandAdapter.Define {
-        val commandLayout=LayoutInflater.from(context).inflate(R.layout.recyclerview_commandlist_layout,parent,false)
+        val commandLayout = LayoutInflater.from(context)
+            .inflate(R.layout.recyclerview_commandlist_layout, parent, false)
         return Define(commandLayout)
     }
 
     override fun onBindViewHolder(holder: CommandAdapter.Define, position: Int) {
-        holder.commandTitle?.text=list?.get(position).text.toString()
-        holder.commanDetail?.text=list?.get(position).detail.toString()
+        holder.commandTitle?.text = list?.get(position).text.toString()
+        holder.commanDetail?.text = list?.get(position).detail.toString()
     }
 
     override fun getItemCount(): Int {
         return list?.size
+    }
+
+    fun setData(liste: List<CommandModel>) {
+        this.list = liste;
+        notifyDataSetChanged()
     }
 
     inner class Define(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -30,8 +36,10 @@ class CommandAdapter(var context: Context, var list: List<CommandModel>) :
         var commanDetail: TextView? = null
 
         init {
-            commandTitle=itemView.findViewById(R.id.recyclerview_commandlist_layout_title_textView)
-            commanDetail=itemView.findViewById(R.id.recyclerview_commandlist_layout_detail_textView)
+            commandTitle =
+                itemView.findViewById(R.id.recyclerview_commandlist_layout_title_textView)
+            commanDetail =
+                itemView.findViewById(R.id.recyclerview_commandlist_layout_detail_textView)
         }
     }
 
