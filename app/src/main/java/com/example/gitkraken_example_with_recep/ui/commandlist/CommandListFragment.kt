@@ -14,6 +14,7 @@ import com.example.gitkraken_example_with_recep.data.models.CommandModel
 import com.example.gitkraken_example_with_recep.key
 import com.example.gitkraken_example_with_recep.ui.adapters.CommandAdapter
 import com.example.gitkraken_example_with_recep.ui.base.BaseFragment
+import com.example.gitkraken_example_with_recep.ui.category.CategoryFragment
 import kotlinx.android.synthetic.main.fragment_command_list.*
 import javax.inject.Inject
 
@@ -21,6 +22,7 @@ import javax.inject.Inject
 class CommandListFragment : BaseFragment(), CommandListMvpView {
     lateinit var adapter: CommandAdapter
     lateinit var position: String
+    var instance:CommandListFragment?=null
 
     @Inject
     lateinit var presenter: CommandListMvpPresenter<CommandListMvpView>
@@ -47,6 +49,13 @@ class CommandListFragment : BaseFragment(), CommandListMvpView {
 
     override fun takePosition(): String {
         return position
+    }
+
+    override fun getInstance(): Fragment {
+        if (instance == null) {
+            instance = CommandListFragment()
+        }
+        return instance as CommandListFragment
     }
 
 }

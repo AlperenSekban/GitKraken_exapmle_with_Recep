@@ -14,6 +14,8 @@ import javax.inject.Inject
 
 class SplashScreenFragment : BaseFragment(),SplashScreenMvpView {
 
+    var instance:SplashScreenFragment?=null
+
     @Inject
     lateinit var presenter: SplashScreenMvpPresenter<SplashScreenMvpView>
     override fun onCreateView(
@@ -31,8 +33,15 @@ class SplashScreenFragment : BaseFragment(),SplashScreenMvpView {
     }
 
     override fun openCategoriesFragment(){
-        goFragment(R.id.activity_mainActivity_frameLayout,CategoryFragment(),requireContext())
+        goFragment(R.id.activity_mainActivity_frameLayout,CategoryFragment().getInstance(),requireContext())
 
+    }
+
+    override fun getInstance(): Fragment {
+        if (instance == null) {
+            instance = SplashScreenFragment()
+        }
+        return instance as SplashScreenFragment
     }
 
 
