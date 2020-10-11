@@ -13,6 +13,8 @@ import androidx.fragment.app.FragmentTransaction
 val readTimeout: Long = 30
 val connectTimeout: Long = 30
 val key = "position"
+val timeOutConnect: Long = 10
+val splashScreenSleepTime:Long=3000
 
 fun hideLoadinginUtilty(progressDialog: ProgressDialog) {
     if (progressDialog != null) {

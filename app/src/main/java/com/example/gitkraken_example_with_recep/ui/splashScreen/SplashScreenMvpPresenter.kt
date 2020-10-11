@@ -1,4 +1,7 @@
 package com.example.gitkraken_example_with_recep.ui.splashScreen
 
-interface SplashScreenMvpPresenter {
+import com.example.gitkraken_example_with_recep.ui.base.MvpPresenter
+
+interface SplashScreenMvpPresenter<V:SplashScreenMvpView>:MvpPresenter<V> {
+    fun startWaiting()
 }
