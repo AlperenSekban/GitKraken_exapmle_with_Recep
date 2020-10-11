@@ -1,4 +1,6 @@
 package com.example.gitkraken_example_with_recep.ui.commandlist
 
-interface CommandListMvpPresenter {
+import com.example.gitkraken_example_with_recep.ui.base.MvpPresenter
+
+interface CommandListMvpPresenter<V:CommandListMvpView>:MvpPresenter<V> {
 }
