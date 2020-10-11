@@ -40,7 +40,7 @@ class CommandListFragment : BaseFragment(), CommandListMvpView {
     }
 
     override fun loadDataToList(response: List<CommandModel>) {
-
+        adapter= CommandAdapter(requireContext(),response)
         adapter.setData(response)
         fragment_commandListFragment_rcyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayout.VERTICAL, false)
