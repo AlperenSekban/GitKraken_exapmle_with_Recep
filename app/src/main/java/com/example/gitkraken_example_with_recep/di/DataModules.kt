@@ -11,6 +11,12 @@ import com.example.gitkraken_example_with_recep.data.commandServices.CommandServ
 import com.example.gitkraken_example_with_recep.data.commandServices.CommandServicesImp
 import com.example.gitkraken_example_with_recep.ui.base.BasePresenter
 import com.example.gitkraken_example_with_recep.ui.base.MvpView
+import com.example.gitkraken_example_with_recep.ui.category.CategoryFragmentMvpPresenter
+import com.example.gitkraken_example_with_recep.ui.category.CategoryFragmentPresenter
+import com.example.gitkraken_example_with_recep.ui.category.CategoryfragmentMvpView
+import com.example.gitkraken_example_with_recep.ui.commandlist.CommandListFragmentPresenter
+import com.example.gitkraken_example_with_recep.ui.commandlist.CommandListMvpPresenter
+import com.example.gitkraken_example_with_recep.ui.commandlist.CommandListMvpView
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -61,5 +67,17 @@ class DataModules(app: Application) {
     @Provides
     fun provideCategoryServices(retrofitClient: RetrofitClient): CategoryServices {
         return CategoryServicesImp(retrofitClient)
+    }
+
+    @Singleton
+    @Provides
+    fun provideCommandPresenter(apiServices: ApiServices):CommandListMvpPresenter<CommandListMvpView>{
+        return CommandListFragmentPresenter(apiServices)
+    }
+
+    @Singleton
+    @Provides
+    fun provideCategoryPresenter(apiServices: ApiServices):CategoryFragmentMvpPresenter<CategoryfragmentMvpView>{
+        return CategoryFragmentPresenter(apiServices)
     }
 }
