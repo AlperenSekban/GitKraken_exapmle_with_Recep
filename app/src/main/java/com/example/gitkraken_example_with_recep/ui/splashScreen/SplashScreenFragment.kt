@@ -24,7 +24,7 @@ class SplashScreenFragment : BaseFragment(),SplashScreenMvpView {
 
         (requireActivity().application as MvpApp).viewComponents?.injectSplashFragment(this)
 
-        presenter.onAttach(this)
+        presenter.onAttact(this)
         presenter.initPresenter()
 
         return view
