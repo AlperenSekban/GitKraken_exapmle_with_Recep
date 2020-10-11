@@ -17,6 +17,9 @@ import com.example.gitkraken_example_with_recep.ui.category.CategoryfragmentMvpV
 import com.example.gitkraken_example_with_recep.ui.commandlist.CommandListFragmentPresenter
 import com.example.gitkraken_example_with_recep.ui.commandlist.CommandListMvpPresenter
 import com.example.gitkraken_example_with_recep.ui.commandlist.CommandListMvpView
+import com.example.gitkraken_example_with_recep.ui.splashScreen.SplashScreenMvpPresenter
+import com.example.gitkraken_example_with_recep.ui.splashScreen.SplashScreenMvpView
+import com.example.gitkraken_example_with_recep.ui.splashScreen.SplashScreenPresenter
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -71,13 +74,19 @@ class DataModules(app: Application) {
 
     @Singleton
     @Provides
-    fun provideCommandPresenter(apiServices: ApiServices):CommandListMvpPresenter<CommandListMvpView>{
+    fun provideCommandPresenter(apiServices: ApiServices): CommandListMvpPresenter<CommandListMvpView> {
         return CommandListFragmentPresenter(apiServices)
     }
 
     @Singleton
     @Provides
-    fun provideCategoryPresenter(apiServices: ApiServices):CategoryFragmentMvpPresenter<CategoryfragmentMvpView>{
+    fun provideCategoryPresenter(apiServices: ApiServices): CategoryFragmentMvpPresenter<CategoryfragmentMvpView> {
         return CategoryFragmentPresenter(apiServices)
+    }
+
+    @Singleton
+    @Provides
+    fun provideSlpashScreenPresenter(apiServices: ApiServices): SplashScreenMvpPresenter<SplashScreenMvpView> {
+        return SplashScreenPresenter(apiServices)
     }
 }
