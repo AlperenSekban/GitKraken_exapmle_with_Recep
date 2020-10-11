@@ -52,3 +52,10 @@ fun sendStringData(key: String, data: String, fragment: Fragment) {
     args.putString(key, data)
     fragment.arguments = args
 }
+
+fun goFragment(location: Int,fragment: Fragment,context: Context){
+    (context as FragmentActivity).supportFragmentManager.beginTransaction()
+        .replace(location,fragment,null)
+        .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+        .commit()
+}
